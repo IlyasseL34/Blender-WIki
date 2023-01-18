@@ -1,0 +1,19 @@
+img {
+    padding: 10px 10px 10px 10px;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+body {
+    background-color: #1F1F1F;
+    color: white
+}
+
+a {
+    color: cyan;
+}
+
+.hljs {
+    background-color: #333333;
+    color: #FFFFFF;
+}

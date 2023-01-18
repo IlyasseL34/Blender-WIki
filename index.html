@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+    <!-- SEO -->
+    <title>Me - HTML Template Demo</title>
+    <meta name="description" content="Me is a slick, personal layout for any individual wanting a minimal online presence. Features include a big background image or video, logo, bio and icons." />
+    <meta name="robots" content="index, follow" />
+    <meta name="referrer" content="always" />
+
+    <!-- Social & Open Graph -->
+    <meta property="og:title" content="Me - HTML Template Demo" />
+    <meta property="og:description" content="Me is a slick, personal layout for any individual wanting a minimal online presence. Features include a big background image or video, logo, bio and icons." />
+    <meta property="og:image" content="https://demo.onepagelove.com/fullsingle-html/me/images/social.jpg">
+    <!-- include your hosted image full URL -->
+    <meta property="og:url" content="https://demo.onepagelove.com/fullsingle-html/me/" />
+    <meta name="twitter:title" content="Me - HTML Template Demo">
+    <meta name="twitter:description" content="Me is a slick, personal layout for any individual wanting a minimal online presence. Features include a big background image or video, logo, bio and icons." />
+    <meta name="twitter:image" content="https://demo.onepagelove.com/fullsingle-html/me/images/social.jpg" />
+    <!-- include your hosted image full URL -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@onepagelove" />
+    <meta name="twitter:creator" content="@robhope" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="images/favicon.png" sizes="32x32">
+
+    <!-- Styles -->
+    <link rel='stylesheet' href='assets/css/me.css' type='text/css' media='screen' />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+
+</head>
+
+<body id="fullsingle" class="page-template-page-fullsingle-me me-video" style="overflow: hidden;">
+
+    <video id="video1" src="videos/video ebook.mp4" style="display: none; width: 100%; height: 100%;  position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 1001;" autoplay></video>
+    
+    <script>
+        // Définir une variable pour stocker le temps d'inactivité
+        var inactiveTime = 0;
+        var video = document.getElementById("video1")
+        document.getElementById("video1").style.display = "block";
+        // Définir une fonction pour incrémenter le temps d'inactivité
+        function inactiveTimeout() {
+          inactiveTime = inactiveTime + 1;
+          if (inactiveTime > 179) { // 3 minutes
+            // Afficher la vidéo
+            document.getElementById("video1").style.display = "block";
+            video.play();
+            
+          }
+        }
+    
+        // Définir une fonction pour réinitialiser le temps d'inactivité lorsque l'utilisateur interagit avec la page
+        function resetInactiveTime() {
+          inactiveTime = 0;
+        }
+    
+        // Lorsque la page est chargée, démarrer une boucle qui incrémente le temps d'inactivité toutes les secondes
+        window.onload = function() {
+          setInterval(inactiveTimeout, 1000);
+        }
+    
+        // Lorsque l'utilisateur clique sur l'écran, fermer la vidéo et réinitialiser le temps d'inactivité
+        window.onclick = function() {
+          document.getElementById("video1").style.display = "none";
+          video.currentTime = 0;
+          video.pause();
+          resetInactiveTime();
+        }
+      </script>
+    <!-- YouTube Video -->
+    <div class="me-video-container">
+        <video class="video" muted autoplay loop src="videos/video ebook.mp4"></video>	
+    </div>
+
+<div class="fs-me">
+
+        <!-- Content Container -->
+        <div class="me-content">
+
+            <div class="logo">
+
+                <p>BLENDER WIKI</p>
+
+            </div>
+
+            <div class="bio">
+
+                <p style="font-size: 0.5em; text-align: auto; line-height: 30px; text-shadow: 2px 2px 2px black;">Blender est un logiciel libre de référence pour la création d’images et l’animation 3D, qui n’a rien à envier à ses concurrents standards du cinéma d’animation aujourd’hui. Pour faciliter l'accès à Blender au plus grand nombre dans les
+                    communautés francophones et donc apprendre aux utilisateurs amateurs et intermédiaires comment utiliser ce logiciel dans ses détails les plus subtils, une documentation pédagogue devrait exister.
+                </p>
+
+            </div>
+
+            <div class="network">
+
+                <a href="Blender Wiki Markdown/Index.html"><button class="ghost-button"><b>Extrait du Wiki</b></button></a>
+
+
+            </div>
+
+            <div class="credit">
+
+                <p class="copyright">&copy;2023 <a href="#">Ilyasse L</a></p>
+
+                <!-- 
+			To edit this credit you can remove the CCA 3.0 license for only $5 here: https://onepagelove.com/me 
+			this really helps contribute towards us developing more templates and means the world to me!
+			Cheers, Rob (@robhope)
+			-->
+
+            </div>
+
+        </div>
+
+    </div>
+
+</body>
+
+</html>

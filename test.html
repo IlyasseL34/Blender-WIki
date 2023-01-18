@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Vidéo inactivité</title>
+</head>
+<body style="overflow: hidden;">
+  
+  <video id="video1" src="videos/video ebook.mp4" style="display: none; width: 100%; height: 100%;  position: absolute; top: 0; right: 0; bottom: 0; left: 0; z-index: 999;" autoplay></video>
+
+  <script>
+    // Définir une variable pour stocker le temps d'inactivité
+    var inactiveTime = 0;
+    var video = document.getElementById("video1")
+    document.getElementById("video1").style.display = "block";
+    // Définir une fonction pour incrémenter le temps d'inactivité
+    function inactiveTimeout() {
+      inactiveTime = inactiveTime + 1;
+      if (inactiveTime > 179) { // 3 minutes
+        // Afficher la vidéo
+        document.getElementById("video1").style.display = "block";
+        video.play();
+        
+      }
+    }
+
+    // Définir une fonction pour réinitialiser le temps d'inactivité lorsque l'utilisateur interagit avec la page
+    function resetInactiveTime() {
+      inactiveTime = 0;
+    }
+
+    // Lorsque la page est chargée, démarrer une boucle qui incrémente le temps d'inactivité toutes les secondes
+    window.onload = function() {
+      setInterval(inactiveTimeout, 1000);
+    }
+
+    // Lorsque l'utilisateur clique sur l'écran, fermer la vidéo et réinitialiser le temps d'inactivité
+    window.onclick = function() {
+      document.getElementById("video1").style.display = "none";
+      video.currentTime = 0;
+      video.pause();
+      resetInactiveTime();
+    }
+  </script>
+</body>
+</html>

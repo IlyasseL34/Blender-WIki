@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Mise en Lumière - Pratique.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<link href="../assets/css/wiki style.css" rel="stylesheet">
+
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="../assets/js/redirect.js"></script>
+
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+img{ padding: 10px 10px 10px 10px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+body{ background-color: #1F1F1F;
+    color: white
+    }
+a{
+   color: cyan;
+}
+.hljs {
+	background-color: #333333;
+   color: #FFFFFF;
+	
+}
+#retourmenu {
+  /* Base styles for button */
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#retourmenu:hover {
+  /* Styles when mouse is hovered over button */
+  background-color: darkblue;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#retourmenu:active {
+  /* Styles when button is clicked */
+  transform: scale(0.9);
+}
+</style>
+<a href="Index.html"><button id="retourmenu"> RETOUR AU MENU PRINCIPAL </button></a>
+<h1 id="mise-en-lumi%C3%A8re">Mise en Lumière</h1>
+<h2 id="pratique">Pratique</h2>
+<ol>
+<li><a href="#World">World</a></li>
+<li><a href="#SolLumiere">Sol et Lumières</a></li>
+</ol>
+<hr>
+<h3 id="pour-commencer-si-vous-navez-pas-suivi-le-cours-sur-la-mod%C3%A9lisation-extrusion---biseau---d%C3%A9coupage-ou-le-cours-mat%C3%A9riaux-et-textures---pratique-basique-sur-les-mat%C3%A9riaux-il-faut-t%C3%A9l%C3%A9charger-le-fichier-blender-et-louvrir">Pour commencer, si vous n'avez pas suivi le cours sur la <a href="Mod%C3%A9lisation%20Extrusion%20-%20Biseau%20-%20D%C3%A9coupe.md">Modélisation Extrusion - Biseau - Découpage</a>, OU le cours <a href="Mat%C3%A9riaux%20et%20Textures%20-%20Pratique.md">Matériaux et Textures - Pratique Basique</a> sur les matériaux il faut télécharger le  <strong><a href="Sources/Fichiers%20Blender/Mise%20en%20Lumi%C3%A8re%20-%20Pratique.blend">Fichier Blender</a></strong> et l'ouvrir.</h3>
+<p>L'exemple pratique est très simple, et en extérieur il n'a pas besoin d'énormément de mise en lumière. Voici pourquoi il sera interessant de visiter un cas plus complexe en intérieur en <a href="">Projets pratiques et Astuces</a>.</p>
+<hr>
+<pre class="hljs"><code><div>Supprimer toutes sources de lumière
+</div></code></pre>
+<p><em>Dans le fichier, il y a une &quot;<strong>Light</strong>&quot;  et un &quot;<strong>world</strong>&quot; de couleur grise. Pour travailler la lumière comme il se doit, il nous faut <strong>supprimer la Light</strong> en appuyant sur SUPPR sur le clavier, et mettre la <strong>couleur du World en noir</strong> pur depuis son menu sur la droite de l'écran.</em></p>
+<img src="Sources/Img/World noir.png" alt="Alt text" height="300px">
+<p><em>Il ne reste au final qu'une caméra et un cube dans la scène.</em></p>
+<img src="Sources/Img/Camera et mesh.png" alt="Alt text" >
+<br>
+<hr>
+<center id="World">
+<h1 id="world">World</h1>
+</center>
+<pre class="hljs"><code><div>Ajouter un HDRI de ville depuis le site de Polyhaven
+</div></code></pre>
+<p><a href="https://polyhaven.com/a/neuer_zollhof">HDRI POLYHAVEN</a></p>
+<p><em>Aller sur le site de <strong>Polyhaven</strong> pour télécharger un <strong>HDRI</strong>. Nous cherchons un <strong>HDRI</strong> d'extérieur en ville.<br>
+Dans notre cas nous choisissons <a href="https://polyhaven.com/a/neuer_zollhof">celui ci</a>.</em></p>
+<p><em>Pour télécharger, le bouton de <strong>Download</strong> se situe en haut à droite de la page.</em><br>
+<img src="Sources/Img/Download HDRI.png" alt="Alt text"></p>
+<p><em>Une fois télécharger, nous l'importons dans Blender depuis l'<strong>onglet Shading</strong> et dans la catégorie <strong>World</strong> qui est choissable dans le coin haut gauche de la fenetre du <strong>Shader Editor</strong>:</em>
+<img src="Sources/Img/Onglet Shading.png" alt="Alt text"></p>
+<img src="Sources/Img/World mode.png" alt="Alt text">
+<p><em>Ajouter un Environnement texture en faisant Add&gt;Texture&gt;Environment Texture et le brancher sur l'entrée &quot;<strong>Color</strong>&quot; du Noeud <strong>Background</strong>.</em></p>
+<img src="Sources/Img/Nodes World base.png" alt="Alt text">
+<p><em>Il faut alors importer l'HDRI avec le bouton Open.</em></p>
+<p><em>Par défaut, la preview de la scène dans l'onglet Shading est faite à travers un éclairage sous <strong>HDRI temporaire</strong>. Pour le désactiver et voir le véritable éclairage, il suffit de changer de <strong>mode de shading</strong> dans le coin supérieur droit de la vue 3D.</em></p>
+<img src="Sources/Img/Mode de rendu final.png" alt="Alt text">
+<p><em>Pour avoir un éclairage qui fonctionne bien avec la scène, on baisse la Strength à 0.1 et avec l'add-on <a href="Mat%C3%A9riaux%20et%20Textures%20-%20Pratique.md">Node Wrangler</a>, on recréer une transformation sur la texture avec le raccourcis CTRL+T</em></p>
+<img src="Sources/Img/Wolrd with texture.png" alt="Alt text">
+<img src="Sources/Img/Mapping World.png" alt="Alt text">
+<p><em>En changeant la rotation en Z sur le noeud <strong>Mapping</strong>, on peut faire tourner l'environnement pour avoir de meilleurs reflets sur le modèle.</em></p>
+<p><img src="Sources/Img/Mapping Z rotation world.png" alt="Alt text" height="300px"> <img src="Sources/Img/Mesh + World.png" alt="Alt text" height="300px"></p>
+<br>
+<hr>
+<center id="SolLumiere">
+<h1 id="sol-et-lumi%C3%A8res">Sol et Lumières</h1>
+</center>
+<pre class="hljs"><code><div>Ajouter un Sol sous le modèle pour les rebonds de lumière et des points lights pour faire concorder l'HDRI à l'éclairage global.
+</div></code></pre>
+<p><em>On ajoute un sol après être retourné dans l'<strong>onglet Layout</strong> de Blender.
+On peut alors poser plusieurs <strong>points lights</strong> dans l'environnement au niveau des zones importantes.</em>
+<em>Ou alors mettre des <strong>Area lights</strong> pour créer des faisseaux de lumière plus directionels.</em></p>
+<img src="Sources/Img/Onglet Layout.png" alt="Alt text">
+<img src="Sources/Img/Sol + world.png" alt="Alt text" height="300px">
+<p><em>Voici le résultat après une petite mise en Lumière.</em></p>
+<img src="Sources/Img/Lights final.png" alt="Alt text" height="300px">
+<center>
+<h1 id="pour-apprendre-%C3%A0-faire-le-rendu-de-cette-sc%C3%A8ne-cest-par-ici">Pour apprendre à faire le rendu de cette scène, c'est par <a href="Rendu - Pratique.html">ICI</a></h1>
+</center>
+</body>
+</html>

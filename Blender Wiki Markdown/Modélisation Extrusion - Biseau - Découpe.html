@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Modélisation Extrusion - Biseau - Découpe.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<link href="../assets/css/wiki style.css" rel="stylesheet">
+
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="../assets/js/redirect.js"></script>
+
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+img{ padding: 10px 10px 10px 10px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+body{ background-color: #1F1F1F;
+    color: white
+    }
+a{
+   color: cyan;
+}
+.hljs {
+	background-color: #333333;
+   color: #FFFFFF;
+	
+}
+#retourmenu {
+  /* Base styles for button */
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#retourmenu:hover {
+  /* Styles when mouse is hovered over button */
+  background-color: darkblue;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#retourmenu:active {
+  /* Styles when button is clicked */
+  transform: scale(0.9);
+}
+</style>
+<a href="index.html"><button id="retourmenu"> RETOUR AU MENU PRINCIPAL </button></a>
+<h1 id="mod%C3%A9lisation">Modélisation</h1>
+<h2 id="extrusions---biseautage---d%C3%A9coupe">Extrusions - Biseautage - Découpe</h2>
+<ol>
+<li><a href="#Th%C3%A9orie">Théorie</a></li>
+<li><a href="#Selections">Selections</a></li>
+<li><a href="#Pratique">Pratique</a></li>
+</ol>
+<center>
+<h1 id="th%C3%A9orie-p-id%22th%C3%A9orie%22p">Théorie <p id="Théorie"></p></h1>
+</center>
+<hr>
+<pre class="hljs"><code><div>Entrer en Edit Mode
+</div></code></pre>
+<p><em>Dans le coin supérieur gauche, après avoir
+selectionné l’objet à transformer, cliquer
+sur «Object Mode», l’Edit Mode est alors
+selectionnable.</em><br>
+<img src="Sources/Img/Modélisation Extrusion 1.png" alt="Alt text"></p>
+<hr>
+<pre class="hljs"><code><div>Choisir un type de sélection
+</div></code></pre>
+<p><em>Au meme endroit, 3 icones apparaissent et
+permettent de choisir les modes de selection
+suivant:</em></p>
+<ul>
+<li><em>Vertex (Point)</em></li>
+<li><em>Edge (Arête)</em></li>
+<li><em>Face (Polygone)</em>
+<em>Les selections issuent de ces modes de sélection
+s’autoconvertissent lorsque d’un changement de
+mode.</em></li>
+</ul>
+<p><img src="Sources/Img/Modélisation Extrusion Mode Selection 2.png" alt="Alt text">
+<img src="Sources/Img/Modélisation Extrusion Mode Selection 3.png" alt="Alt text">
+<img src="Sources/Img/Modélisation Extrusion Mode Selection.png" alt="Alt text"></p>
+<hr>
+<pre class="hljs"><code><div>Selectionner une zone sur l’objet en 3D 
+</div></code></pre>
+<p><em>En utilisant l’outil de sélection du menu d’outils
+(touche de clavier «T») situé à gauche de l’écran,
+il est possible de sélectionner plusieurs parties
+d’un objet. Dans le cas expliqué, nous sélection
+une face</em>
+<em>La face sélectionnée s’illumine en orange.</em></p>
+<p><img src="Sources/Img/Selection tool.png" alt="Alt text"><br>
+<img src="Sources/Img/Sélection Mode edit face.png" alt="Alt text" height="300px"></p>
+<hr>
+<pre class="hljs"><code><div>Extrusions simples
+</div></code></pre>
+<p><em>Dans le menu d’outils «T», maintenir le clic
+gauche sur l’outil d’extrusion pour afficher les 5
+méthodes d’extrusion.
+Cette méthode permet de déplacer une face
+le long d’un axe pré-déterminé. Par défaut, le
+logiciel choisi la normale d’une face ou la position
+de la souris sur l’écran dans le cas de l’ «Extrude
+to Cursor».</em><br>
+<em>Les logos expliquent à quel résultats l’utilisateur
+peut s’attendre avec en vert les zones
+selectionnées.</em></p>
+<blockquote>
+<p>Raccourci en vue 3D: ALT+E</p>
+</blockquote>
+<img src="Sources/Img/Extrusions possibles.png" alt="Alt text" height="300px">
+___
+```
+Extrusion Interne
+```
+*En dessous des extrusions basiques, on
+retrouve l’extrusion interne. C’est un outil qui
+permet de subdiviser et crée une petite version
+de cette meme face en sa surface.*  
+<blockquote>
+<p>Raccourci en vue 3D: I</p>
+</blockquote>
+<img src="Sources\Img\Extrusion Interne.png" alt="Alt text">
+<img src="Sources\Img\Extrusion Interne Exemple.png" alt="Alt text" height="300px">
+<hr>
+<pre class="hljs"><code><div>Biseautage
+</div></code></pre>
+<p><em>Sous l’Extrusion Interne, l’outil de biseautage se présente sous la forme d’un cube au sommet biseauté</em></p>
+<blockquote>
+<p>Raccourci en vue 3D: CTRL+B</p>
+</blockquote>
+<p><em>La forme du biseau est totalement modifiable
+dans le menu qui apparait dans le coin bas
+gauche.</em></p>
+<img src="Sources\Img\Bevel réglages.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Définitions des réglages les plus utilisés
+</div></code></pre>
+<p><em><strong>Width</strong> modifie la profondeur du biseau.
+Segments défini le nombre de coupes sur la
+largeur du biseau.</em><br>
+<em><strong>Shape</strong> controle le profil du biseau: concave/
+convexe</em><br>
+<em><strong>Clamp</strong> Overlap limite la profondeur du biseau si
+des intersections occurent.</em><br>
+<em><strong>Profile Type</strong> - Custom laisse l’utilisateur définir
+la forme du biseau</em></p>
+<ul>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">Astuce: F9 permet de réouvrir ce menu si la dernière action est sa fermeture involontaire.</label></li>
+</ul>
+<hr>
+<pre class="hljs"><code><div>Loop Cut
+</div></code></pre>
+<p><em>Plus bas dans les outils, le Loopcut permet de
+découper des grace à une ligne qui fait le tour
+de la forme 3D. Il ne s’applique qu’en pointant la
+souris sur une arête puis en cliquant.
+Pour déplacer la ligne, il faut maintenir le clic et
+glisser</em></p>
+<blockquote>
+<p>Raccourci en vue 3D: CTRL+R</p>
+</blockquote>
+<img src="Sources\Img\Loopcut Logo.png" alt="Alt text" >
+<img src="Sources\Img\LoopCuting.png" alt="Alt text" height="300px">
+<br>
+<hr>
+<hr>
+<div style="background-color: #163745 ; vertical-align: middle; padding:10px; color: white; border-radius:10px" >
+<center>
+<p id="Selections"></p>
+<h1 id="s%C3%A9lections">Sélections</h1>
+</center>
+<pre class="hljs"><code><div>Sélection de boucle
+</div></code></pre>
+<p><em>Permet de sélectionner une boucle de
+polygones sur les cotés de l’arête sélectionnée.
+Il ne s’utilise qu’en raccourci.</em></p>
+<blockquote>
+<p>Raccourci en vue 3D: ALT+CLIC GAUCHE</p>
+</blockquote>
+<img src="Sources\Img\Loop Select.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Sélection Multiple
+</div></code></pre>
+<p><em>Pour sélectionner différentes parties d’un meme
+objet, il faut utiliser la touche SHIFT en cliquant.</em></p>
+<blockquote>
+<p>Raccourci en vue 3D: SHIFT+CLIC GAUCHE</p>
+</blockquote>
+<img src="Sources\Img\Sélection Multiple.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Sélection de chemin
+</div></code></pre>
+<p><em>Blender permet de trouver le chemin le plus
+court entre deux parties distinctes d’un objet et
+de créer une sélection sur ce chemin:</em></p>
+<ul>
+<li><em>Sélectionner une face</em></li>
+<li><em>Maintenir la touche CTRL en sélectionnant
+une autre face</em></li>
+</ul>
+<blockquote>
+<p>Raccourci en vue 3D: CTRL+CLIC GAUCHE</p>
+</blockquote>
+<img src="Sources\Img\Sélection de chemin.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Dilater/Contracter une sélection
+</div></code></pre>
+<p><em>Une sélection peut se répandre et se contracter
+avec les signes + et - :</em></p>
+<ul>
+<li><em>Dilater: CTRL+ ‘-’</em></li>
+<li><em>Contracter: CTRL+ ‘+’</em></li>
+</ul>
+<blockquote>
+<p>Raccourci en vue 3D: CTRL+ ‘+’
+Raccourci en vue 3D: CTRL+ ‘-’</p>
+</blockquote>
+<div style="background-color: #F19F04; color: black; border-radius:10px">
+<ul>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">ASTUCE: </label><strong>L</strong> en survolant un objet permet de
+sélectionner tous les polygones
+connectés à ce meme objet.</li>
+</ul>
+</div>
+</div>
+<br><br>
+<center>
+<p id="Pratique"></p>
+<h1 id="pratique">Pratique</h1>
+</center>
+<hr>
+<pre class="hljs"><code><div>En «Mode Edit» faire une extrusion interne de la face supérieure
+</div></code></pre>
+<p><em>Utiliser l’outil de sélection pour sélectionner la face supérieure du cube. Prendre l’Outil d’extrusion interne et réduire la face supérieure en cliquant-glissant dans la zone circulaire</em></p>
+<img src="Sources\Img\Cube Extrusion Interne 1.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Post Extrusion Interne.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire une extrusion de la face supérieure
+
+</div></code></pre>
+<p><em>Utiliser l’outil d’extrusion simple et élever la
+face centrale qui est normalement toujours
+sélectionnée</em>
+<img src="Sources\Img\Post extrusion interne et extrusion normale.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Extrusion 2.png" alt="Alt text" height="300px"></p>
+<pre class="hljs"><code><div>Répéter l’opération plusieurs fois jusqu’à obtenir une forme générale ressemblant à un building
+</div></code></pre>
+<p><em>Le but est de donner l’aspect d’un building à la
+forme en général, comme si l’on superposait des
+cubes</em></p>
+<img src="Sources\Img\Building LOD 10.png" alt="Alt text" height="300px">
+<center>
+<ul>
+<li><input type="checkbox" id="checkbox2" checked="true"><label for="checkbox2">ASTUCE: Pour faciliter la lecture du modèle, il faut activer les cavités dans le menu fléché supérieur droit </label><br><img src="Sources\Img\Mode rendu.png" alt="Alt text" style="vertical-align:middle;"><br><img src="Sources\Img\cavity 2.png" alt="Alt text"></li>
+</ul>
+</center>
+<p><br><br><br></p>
+<pre class="hljs"><code><div>Pour chaque étage, faire un loop cut
+dans la partie supérieur des cubes
+</div></code></pre>
+<p><em>Il faut utiliser l’outil Loop Cut et cliquer-glisser
+vers le haut depuis une arête verticale. Répéter
+l’opération sur chaque partie du batiment</em></p>
+<img src="Sources\Img\Lopp cut pour étage.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Loopcut ;odel.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire une «Extrusion Along-Normals»
+des faces juste au dessus des Loop Cuts
+</div></code></pre>
+<p id="ExtrusionAN"></p>
+<p><em>Reprendre le mode de sélection «Face» qui a
+été changé par les Loop Cuts.
+Avec la sélection de boucle, faire un Alt+Clic gauche sur les faces adjacentes aux arêtes
+précédemment crées.
+Faire une extrusion avec l’outil «Extrude Along-Normals» qui se trouve sous le bouton d’extrusion, pour faire sortir les faces</em>.</p>
+<img src="Sources\Img\Select loop modé.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Extruded loop.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire un double Loop Cut à la verticale
+</div></code></pre>
+<p><em>Utiliser l’outil Loop Cut à nouveau mais en
+utilisant le raccourci CTRL+R
+Il faut survoler une arête horizontale pour créer
+des coupures.
+Avant de cliquer:</em></p>
+<ol>
+<li><em>jouer avec la molette pour choisir le nombre
+de coupures: 2</em></li>
+<li><em>Clic Gauche pour valider le nombre.</em></li>
+<li><em>Clic Gauche pour valider l’emplacement.</em>
+<em>A défaut, clic droit valide l’emplacement par défaut.</em></li>
+</ol>
+<img src="Sources\Img\2loopcut vertical.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire un Loop Cut horizontal à la base
+</div></code></pre>
+<p><em>De la même manière qu’à l’étape précédente:
+Faire un loop cut au milieu de la partie basse du
+building.</em></p>
+<img src="Sources\Img\Loopcut base.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire une sélection de boucle de la base et déselectionner une face au centre de la sélection
+</div></code></pre>
+<p><em>Alt+Clic gauche sur une arête verticale au niveau
+de la base du batiment.
+Après cette sélection faite, déselectionner une
+face avec shift+clic gauche.</em></p>
+<img src="Sources\Img\Sélection moins 1.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Faire une «Extrusion Along-Normals» de la sélection
+</div></code></pre>
+<p>(Vu à la page <a href="#ExtrusionAN">précédente</a>)</p>
+<img src="Sources\Img\Extrude AN base.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Sélectionner le contour de l’extrusion créée
+</div></code></pre>
+<p><em>On utilisera l’outil de sélection de boucle et nous
+commençons à partir d’ici à travailler sur les
+détails du batiment.</em></p>
+<img src="Sources\Img\Selection extrude an base.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Refaire une nouvelle et légère «Extrusion Along-Normals» sur la nouvelle sélection
+</div></code></pre>
+<p><em>Ceci permet de créer un contour à la base du
+batiment.</em></p>
+<img src="Sources\Img\New AN BASE.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>De la meme manière:
+    Sélectionner la boucle nouvellement créée et faire à nouveau une «Extrusion Along-Normals»
+</div></code></pre>
+<img src="Sources\Img\base new an.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Ajouter des détails avec des extrusions
+internes et des extrusions
+</div></code></pre>
+<ol>
+<li><em>Sélectionner une boucle de polygones</em></li>
+<li><em>Faire une extrusion interne de la selection</em></li>
+<li><em>Faire un «extrude along-normals» vers l’intérieur ou l’extérieur, au choix</em></li>
+</ol>
+<img src="Sources\Img\Loop cut detail.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Loop cut extrusion interne.png" alt="Alt text" height="300px">
+<img src="Sources\Img\Extrusion interieure.png" alt="Alt text" height="300px">
+<pre class="hljs"><code><div>Répéter l’opération précédente à différents endroits pour augmenter le niveau de détail du modèle
+</div></code></pre>
+<p><em>Les sélections de boucle peuvent se faire
+verticalement ou horizontalement</em></p>
+<img src="Sources\Img\Full modèle.png" alt="Alt text" height="300px">
+<p><br><br></p>
+<center>
+<ul>
+<li><input type="checkbox" id="checkbox3" checked="true"><label for="checkbox3">ASTUCE: Les outils peuvent s’utiliser les uns sur les autres: Ici, il est possible de faire un biseau d’arête. Ceci permet de lui donner de l’épaisseur en la transformant en polygones.</label><br>
+<img src="Sources\Img\arête.png" alt="Alt text" height="200px"><img src="Sources\Img\arête biseau.png" alt="Alt text" height="200px">
+<blockquote>
+<p>Raccourci en vue 3D: CTRL+B</p>
+</blockquote>
+</li>
+</ul>
+<br>
+<hr>
+<h1 id="pour-apprendre-%C3%A0-texturer-ce-mod%C3%A8le-cest-par-ici">Pour apprendre à texturer ce modèle, c'est par <a href="Matériaux et Textures - Pratique.html">ICI</a></h1>
+</center>
+
+</body>
+</html>

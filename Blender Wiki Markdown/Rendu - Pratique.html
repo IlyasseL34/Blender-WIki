@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Rendu - Pratique.md</title>
+<meta http-equiv="Content-type" content="text/html;charset=UTF-8">
+
+<link href="../assets/css/wiki style.css" rel="stylesheet">
+
+
+<script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+<script src="../assets/js/redirect.js"></script>
+
+</head>
+<body>
+  <script>
+    mermaid.initialize({
+      startOnLoad: true,
+      theme: document.body.classList.contains('vscode-dark') || document.body.classList.contains('vscode-high-contrast')
+          ? 'dark'
+          : 'default'
+    });
+  </script>
+<style>
+img{ padding: 10px 10px 10px 10px; border-radius: 10px; box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px; }
+body{ background-color: #1F1F1F;
+    color: white
+    }
+a{
+   color: cyan;
+}
+.hljs {
+	background-color: #333333;
+   color: #FFFFFF;
+	
+}
+#retourmenu {
+  /* Base styles for button */
+  padding: 10px 20px;
+  border-radius: 20px;
+  background-color: blue;
+  color: white;
+  border: none;
+  font-size: 16px;
+  transition: all 0.2s ease-in-out;
+}
+
+#retourmenu:hover {
+  /* Styles when mouse is hovered over button */
+  background-color: darkblue;
+  cursor: pointer;
+  transform: scale(1.1);
+}
+
+#retourmenu:active {
+  /* Styles when button is clicked */
+  transform: scale(0.9);
+}
+</style>
+<a href="Index.html"><button id="retourmenu"> RETOUR AU MENU PRINCIPAL </button></a>
+<h1 id="rendu">Rendu</h1>
+<h2 id="pratique">Pratique</h2>
+<ol>
+<li><a href="#Cam%C3%A9ra">Caméra</a></li>
+<li><a href="#Reglages">Réglages de rendu</a></li>
+<li><a href="#Export">Exportation</a></li>
+</ol>
+<hr>
+<hr>
+<h3 id="pour-commencer-si-vous-navez-pas-suivi-le-cours-sur-la-pratique-de-la-mise-en-lumi%C3%A8re-il-faut-t%C3%A9l%C3%A9charger-le-fichier-blender-et-louvrir">Pour commencer, si vous n'avez pas suivi le cours sur la pratique de la <a href="Mise%20en%20Lumi%C3%A8re%20-%20Pratique.md">Mise en Lumière</a> il faut télécharger le  <strong><a href="Sources/Fichiers%20Blender/Mise%20en%20Lumi%C3%A8re%20-%20Pratique%20FIN.blend">Fichier Blender</a></strong> et l'ouvrir.</h3>
+<br>
+<center>
+<h1 id="cam%C3%A9ra-p-id%22cam%C3%A9ra%22p">Caméra <p id="Caméra"></p></h1>
+</center>
+<pre class="hljs"><code><div>Si la caméra n'existe pas, en ajouter une.
+
+</div></code></pre>
+<p><em>S'il n'y a pas de caméra, il faut en ajouter une <strong>Add&gt;Camera</strong></em></p>
+<img src="Sources/Img/Add camera.png" alt="Alt text">
+<pre class="hljs"><code><div>Verrouiller la caméra à la vue et choisir son angle de vue pour le rendu.
+</div></code></pre>
+<p><em>Pour déplacer la caméra, il faut déjà entrer dedans. Pour ça, il faut cliquer sur l'icone de caméra sur la droite de l'écran.</em></p>
+<img src="Sources/Img/Camera enter.png" alt="Alt text">
+<blockquote>
+<p>Raccourci en vue 3D: 0 sur le pavé numérique</p>
+</blockquote>
+<center>
+<ul>
+<li><input type="checkbox" id="checkbox0" checked="true"><label for="checkbox0">ASTUCE: Si vous vous perdez dans votre scène, vous pouvez recenter sur la scène en appuyant sur A puis en allant dans View&gt;Frame Selected.</label>
+<blockquote>
+<p>Raccourci en vue 3D: &quot;.&quot; sur le pavé numérique</p>
+</blockquote>
+</li>
+</ul>
+</center>
+<p><em>Pour que la caméra suive les mouvements de l'utilisateur, il faut la verouiller en allant dans le &quot;<strong>menu N</strong>&quot; (Touche <strong>N</strong> du clavier), dans la catégorie <strong>View</strong> et cocher <strong>Camera to View</strong>.</em></p>
+<img src="Sources/Img/LOCK CAMERA TO VIEW.png" alt="Alt text">
+<pre class="hljs"><code><div>Selectionner la Caméra et ajouter du DOF
+</div></code></pre>
+<p>Après avoir cliquer sur la <strong>caméra</strong>, un menu apparait en bas à droit de l'écran avec un <strong>icone de caméra</strong>. En l'ouvrant, on a affaire à plusieurs réglages.</p>
+<img src="Sources/Img/Camera set.png" alt="Alt text">
+<p><em>On s'intéresse ici à la catégorie <strong>Depth of Field</strong> qu'il faut activer.
+En l'ouvrant, on a accès à la <strong>distance de focus</strong>, et à l'<strong>Aperture</strong>.</em></p>
+<p><em>En ouvrant l'Aperture, on a accès aux memes réglages que sur un appareil photo. Pour augmenter le flou on baisse le <strong>F-Stop</strong> à <strong>0.2</strong>.</em>
+Il ne reste plus qu'à <strong>jouer avec la distance de focus</strong> pour que le modèle ne soit pas flou.</p>
+<img src="Sources/Img/DOF.png" alt="Alt text">
+<img src="Sources/Img/iMAGE + DOF.png" alt="Alt text">
+<center>
+<h1 id="r%C3%A9glages-de-rendu-p-id%22reglages%22p">Réglages de rendu <p id="Reglages"></p></h1>
+<h4 id="cette-partie-fait-%C3%A9cho-au-cours-sur-le-rendu-sur-cycles">Cette partie fait écho au cours sur le <a href="">Rendu sur Cycles</a>.</h4>
+</center>
+<pre class="hljs"><code><div>Moteur de Rendu: Cycles
+</div></code></pre>
+<p>Pour ce projet, on choisira le moteur de rendu <strong>Cycles</strong> qu'on active dans l'onglet de réglage de rendu dans l'onglet inférieur droit: il a un icone d'appareil photo.</p>
+<img src="Sources/Img/Mode Cycles.png" alt="Alt text">
+<pre class="hljs"><code><div> Réglages de rendu:
+   Noise Threshold: 0.01
+   Denoise: OID - Albedo/Normal
+   Max Samples: 1024
+   Light Path Bouces: Total 3
+   Caustics: OFF
+   Simplify textures: 2048px
+
+Le reste n'a pas à etre modifié.
+
+</div></code></pre>
+<p><em>Dans <strong>Sampling&gt;Render</strong> le <strong>Noise Threshold</strong>  doit etre activé et mis à <strong>0.01</strong>. Il faut aussi <strong>cocher la case</strong> de <strong>Denoise</strong> si ça n'est pas déjà pré-coché. Enfin, <strong>Max Samples</strong> doit etre descendu à <strong>1024</strong>.</em></p>
+<img src="Sources/Img/Sampling settings.png" alt="Alt text">
+<p><em>Dans <strong>Light Paths&gt;Max Bounces</strong> en <strong>Total</strong>, il faut mettre <strong>3</strong>; ça permet à chaque particule de lumière de ne faire que 3 rebonds avant de disparaitre.</em></p>
+<img src="Sources/Img/Light Paths.png" alt="Alt text">
+<p><em>Dans <strong>Caustics</strong>, il faut tout <strong>décocher</strong>: <strong>Reflective</strong> et <strong>Refractive</strong>.</em>
+<img src="Sources/Img/Caustics.png" alt="Alt text"></p>
+<p><em>Il faut <strong>activer</strong> l'onglet <strong>Simplify</strong> et dans <strong>Render&gt;Texture Limit</strong> mettre 2048: on limite la taille des textures.</em></p>
+<img src="Sources/Img/Simplify.png" alt="Alt text">
+<center>
+<ul>
+<li><input type="checkbox" id="checkbox1" checked="true"><label for="checkbox1">ASTUCE: Dans </label><strong>Edit&gt;Préferences&gt;System</strong>, suivant la configuration de l'ordinateur, il est possible d'accélérer les rendus sur Cycles. Dans mon cas: Optix affiche mes composants donc je les coche pour obtenir ce petit boost de puissance.
+<img src="Sources/Img/System Soft.png" alt="Alt text"></li>
+</ul>
+</center>
+<center>
+<h1 id="exportation-p-id%22export%22p">Exportation <p id="Export"></p></h1>
+</center>
+<pre class="hljs"><code><div>Réglages d'exportation:
+   Résolution: 1440 x 1920
+   Output: PNG - RGB - 16
+</div></code></pre>
+<p><em>Dans les réglages d'exportation sous les réglages de rendu, il suffit de copier les réglages qui sont sur cette image:</em>
+<img src="Sources/Img/Export base.png" alt="Alt text"></p>
+<pre class="hljs"><code><div>Lors d'un rendu d'animation: Attention, à bien choisir le chemin de sortie pour ne pas avoir de mauvaise surprise!
+</div></code></pre>
+<pre class="hljs"><code><div>Il ne reste plus qu'à lancer le rendu.
+</div></code></pre>
+<p>*Pour lancer le rendu il faut aller dans <strong>Render&gt;Render Image</strong> en haut de l'écran.
+*
+<img src="Sources/Img/lancer rendu.png" alt="Alt text"></p>
+<pre class="hljs"><code><div>Enregistrer l'image
+</div></code></pre>
+<p><em>Pour enregistrer l'image, il faut aller dans <strong>Image&gt;Save As...</strong>. Chose qui se fait automatiquement en animation.</em></p>
+<img src="Sources/Img/Save Image rendered.png" alt="Alt text">
+</body>
+</html>
